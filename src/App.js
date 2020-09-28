@@ -4,23 +4,38 @@ import './App.css';
 
 function App() {
 
-  
+    let longMin = 25;
+    let longSec = longMin * 60;
+
+    let updateCountdown = () => {
+      var mins = Math.floor(longSec / 60);
+      var secs = longSec % 60;
+
+      longSec--
+      console.log(mins, secs)
+
+    }
+    let startTimer = () => {
+      setInterval(updateCountdown, 1000);
+    }
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='header'>
+      <h1>Start optomizing your study time.</h1>
+      <h2>Use this timer to help you stay focused and give yourself measured and necessary breaks.</h2>
+      </div>
+      <div className='timers'>
+        <h3></h3>
+        <button onClick={startTimer}>Start Timer</button>
+        <h3>00:00</h3>
+        <button>Start Break</button>
+      </div>
+
+
+    
     </div>
   );
 }
