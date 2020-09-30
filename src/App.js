@@ -7,7 +7,7 @@ function App() {
     let longMin = 25;
     let longSec = longMin * 60;
 
-    let updateCountdown = () => {
+    let updateCountdown = (longSec) => {
       var mins = Math.floor(longSec / 60);
       var secs = longSec % 60;
 
